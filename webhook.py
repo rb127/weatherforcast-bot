@@ -33,6 +33,7 @@ def makeResponse(req):
     date = parameters.get("date")
     r=requests.get('https://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=feec9304b30ee7236098ddda96f6ecd2')
     json_object = r.json()
+    print(json_object)
     weather=json_object['list']
     for i in len(weather):
         if date in weather[i]['dt_txt']:
